@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, Actions"
-      - run: cat README.md
+      - run: ls missing-dir
       - run: echo "Done"
