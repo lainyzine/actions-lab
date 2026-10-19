@@ -4,6 +4,7 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v7
       - run: echo "Hello, Actions"
-      - run: ls missing-dir
+      - run: cat README.md
       - run: echo "Done"
