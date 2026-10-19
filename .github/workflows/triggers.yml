@@ -1,0 +1,8 @@
+name: Triggers
+on: push
+jobs:
+  show:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "event: ${{ github.event_name }}"
