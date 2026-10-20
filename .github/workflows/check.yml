@@ -7,3 +7,4 @@ jobs:
       - uses: actions/checkout@v7
       - run: echo "start"
       - run: "echo build: done"
+      - uses: actions/setup-python@v9
