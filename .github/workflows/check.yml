@@ -8,3 +8,4 @@ jobs:
       - run: echo "start"
       - run: "echo build: done"
       - uses: actions/setup-python@v7
+      - run: ./scripts/build.sh
