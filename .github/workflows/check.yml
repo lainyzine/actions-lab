@@ -10,4 +10,3 @@ jobs:
       - uses: actions/setup-python@v7
       - run: ./scripts/build.sh
       - run: sudo apt-get install -y cowsay
-      - run: no-such-command
