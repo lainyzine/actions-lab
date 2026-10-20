@@ -9,4 +9,4 @@ jobs:
       - run: "echo build: done"
       - uses: actions/setup-python@v7
       - run: ./scripts/build.sh
-      - run: apt-get install -y cowsay
+      - run: sudo apt-get install -y cowsay
