@@ -1,16 +1,13 @@
 name: Token check
 on: push
+permissions:
+  contents: read
 jobs:
-  api:
+  issue:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - name: Create issue with gh api
-        run: gh api -i -X POST repos/${{ github.repository }}/issues -f title="Token test"
-        env:
-          GH_TOKEN: ${{ github.token }}
-  cli:
-    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
     steps:
       - uses: actions/checkout@v7
       - name: Create issue with gh issue
