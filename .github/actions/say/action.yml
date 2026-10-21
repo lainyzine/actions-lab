@@ -3,5 +3,5 @@ description: Print a letter
 runs:
   using: composite
   steps:
-    - run: echo "say A"
+    - run: echo "say B"
       shell: bash
