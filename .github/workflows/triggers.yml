@@ -1,5 +1,5 @@
 name: Triggers
-on: push
+on: [push, pull_request]
 jobs:
   show:
     runs-on: ubuntu-latest
