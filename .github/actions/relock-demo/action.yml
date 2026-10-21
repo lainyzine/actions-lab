@@ -3,5 +3,5 @@ description: Prints which version of this action ran
 runs:
   using: composite
   steps:
-    - run: echo "relock demo v1"
+    - run: echo "relock demo v2"
       shell: bash
