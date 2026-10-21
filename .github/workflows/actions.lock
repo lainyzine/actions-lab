@@ -26,6 +26,6 @@ dependencies:
         repo_id: 192625525
     'lainyzine/actions-lab@lab-v1':
         ref: 'lab-v1'
-        commit: 'sha1-2ac0f7a6e7a2b7ca2d286cb6d1562e3242051de0'
+        commit: 'sha1-a64e1cb3a31447549fc8944a86b7b96bb30985ec'
         owner_id: 83129243
         repo_id: 1424980615
