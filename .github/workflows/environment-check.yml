@@ -1,0 +1,18 @@
+name: Environment check
+on: push
+jobs:
+  without-environment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Without environment
+        run: echo "without environment length is ${#VALUE}"
+        env:
+          VALUE: ${{ secrets.ENV_KEY }}
+  with-environment:
+    runs-on: ubuntu-latest
+    environment: lab
+    steps:
+      - name: With environment
+        run: echo "with environment length is ${#VALUE}"
+        env:
+          VALUE: ${{ secrets.ENV_KEY }}
