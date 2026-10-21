@@ -26,6 +26,6 @@ dependencies:
         repo_id: 192625525
     'lainyzine/actions-lab@lock-recheck-20261022-v1':
         ref: 'lock-recheck-20261022-v1'
-        commit: 'sha1-a12f3be668b9fb779bc1e664a034cfeb2e0f95ab'
+        commit: 'sha1-c3a80d4b0108ca71094e16d63aa7b7d4fb82117e'
         owner_id: 83129243
         repo_id: 1424980615
