@@ -1,0 +1,7 @@
+name: Relock demo
+description: Prints which version of this action ran
+runs:
+  using: composite
+  steps:
+    - run: echo "relock demo v1"
+      shell: bash
