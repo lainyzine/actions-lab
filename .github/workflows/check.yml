@@ -12,3 +12,4 @@ jobs:
         with:
           node-version: '22'
       - run: python --version
+      - uses: lainyzine/actions-lab/.github/actions/say@verify-v1
