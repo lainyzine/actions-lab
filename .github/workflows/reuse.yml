@@ -1,7 +1,0 @@
-name: Reuse
-on: workflow_call
-jobs:
-  say:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "reuse says A"
