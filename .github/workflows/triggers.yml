@@ -1,15 +1,8 @@
 name: Triggers
-on:
-  push:
-  pull_request:
-  schedule:
-    - cron: "40 14 * * *"
-    - cron: "27 15 * * *"
-  workflow_dispatch:
+on: push
 jobs:
   show:
     runs-on: ubuntu-latest
     steps:
       - run: |
           echo "event: ${{ github.event_name }}"
-          echo "schedule: ${{ github.event.schedule }}"
