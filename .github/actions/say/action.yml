@@ -1,0 +1,7 @@
+name: say
+description: print a word
+runs:
+  using: composite
+  steps:
+    - run: echo "say A"
+      shell: bash
