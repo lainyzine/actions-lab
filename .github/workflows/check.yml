@@ -6,4 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - run: echo "start"
-      - run: ./scripts/build.sh
+      - run: apt-get install -y cowsay
