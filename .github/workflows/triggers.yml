@@ -1,8 +1,12 @@
 name: Triggers
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "30 22 * * *"
 jobs:
   show:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "event: ${{ github.event_name }} from a pull request"
+          echo "event: ${{ github.event_name }}"
