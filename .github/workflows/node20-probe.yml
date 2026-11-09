@@ -1,0 +1,13 @@
+name: Node 20 probe
+on:
+  push:
+    branches:
+      - node20-eol-lab
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/node-probe
