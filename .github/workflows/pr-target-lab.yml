@@ -1,0 +1,22 @@
+name: PR Target Lab
+
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 어떤 코드로 도는지 본다
+        run: |
+          echo "이벤트: $GITHUB_EVENT_NAME"
+          echo "워크플로가 있는 곳: $GITHUB_REPOSITORY"
+          echo "풀 리퀘스트를 올린 곳: ${{ github.event.pull_request.head.repo.full_name }}"
+      - name: GITHUB_TOKEN 권한을 본다
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -s -H "Authorization: Bearer $GH_TOKEN" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY" |
+            grep -A 6 '"permissions"'
