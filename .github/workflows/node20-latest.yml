@@ -1,0 +1,31 @@
+name: Node 24 latest
+on:
+  push:
+    branches:
+      - node20-eol-lab
+  workflow_dispatch:
+
+jobs:
+  latest-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - uses: actions/cache@v6
+        with:
+          path: ~/.npm
+          key: probe-cache
+      - uses: actions/github-script@v9
+        with:
+          script: console.log('github-script v9')
+      - uses: actions/upload-artifact@v7
+        with:
+          name: probe
+          path: .github/actions/node-probe24/index.js
+      - uses: actions/download-artifact@v8
+        with:
+          name: probe
+          path: /tmp/probe
+      - uses: ./.github/actions/node-probe24
