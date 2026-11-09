@@ -1,0 +1,5 @@
+name: Node probe 24
+description: 액션을 실행하는 Node.js 버전을 로그에 남긴다
+runs:
+  using: node24
+  main: index.js

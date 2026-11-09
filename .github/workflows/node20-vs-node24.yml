@@ -1,0 +1,63 @@
+name: Node 20 vs Node 24
+on:
+  push:
+    branches:
+      - node20-eol-lab
+  workflow_dispatch:
+
+jobs:
+  old-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: probe-cache
+      - uses: actions/github-script@v7
+        with:
+          script: console.log('github-script v7')
+      - uses: actions/upload-artifact@v5
+        with:
+          name: probe
+          path: .github/actions/node-probe/index.js
+      - uses: actions/download-artifact@v5
+        with:
+          name: probe
+          path: /tmp/probe
+      - uses: ./.github/actions/node-probe
+
+  new-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - uses: actions/cache@v5
+        with:
+          path: ~/.npm
+          key: probe-cache
+      - uses: actions/github-script@v8
+        with:
+          script: console.log('github-script v8')
+      - uses: actions/upload-artifact@v6
+        with:
+          name: probe
+          path: .github/actions/node-probe24/index.js
+      - uses: actions/download-artifact@v6
+        with:
+          name: probe
+          path: /tmp/probe
+      - uses: ./.github/actions/node-probe24
+
+  escape-hatch:
+    runs-on: ubuntu-latest
+    env:
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/node-probe
